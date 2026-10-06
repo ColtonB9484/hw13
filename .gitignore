@@ -2,3 +2,4 @@
 *.exe
 cafe
 Makefile
+.cafe.c.swp

@@ -9,14 +9,14 @@
 #include "cafe.h"
 
 void preview_discount(int price_cents, int percent_off) {
-	int cents_off = price_cents * (percent_off / 100);
+	int cents_off = price_cents * percent_off / 100;
 	int discounted_price = price_cents - cents_off;
 	printf("Discounted Price: %d cents\n", discount_price);
 }
 
 void apply_discount(int *price_cents, int percent_off) {
-	if(price_cents != NULL && (percent_off >= 0 && percent_off =< 100)) {
-		int cents_off = *price_cents * (percent_off / 100);
+	if(price_cents != NULL && (percent_off >= 0 && percent_off <=  100)) {
+		int cents_off = *price_cents * percent_off / 100;
 		*price_cents -= cents_off;
 	}
 }
@@ -46,15 +46,16 @@ bool make_change(int paid_cents, int cost_cents, int *change_out) {
 }
 
 bool price_span(const int prices[], int n, int *min_out, int *max_out) {
-	*min_out = prices[0];
-	*max_out = prices[0];
+
 	if(n <= 0) {
 		return false;
 	} else if(min_out == NULL || max_out == NULL) {
 		return false;
 	}
-
-	for(int i = 0, i < n, i++) {
+	
+	*min_out = prices[0];
+	*max_out = prices[0];
+	for(int i = 0; i < n; i++) {
 		if(prices[i] < *min_out) {
 			*min_out = price[i];
 		}
