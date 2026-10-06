@@ -10,8 +10,7 @@
 
 void preview_discount(int price_cents, int percent_off) {
 	int cents_off = price_cents * percent_off / 100;
-	int discounted_price = price_cents - cents_off;
-	printf("Discounted Price: %d cents\n", discount_price);
+	printf("Discounted Price: %d cents\n", price_cents - cents_off);
 }
 
 void apply_discount(int *price_cents, int percent_off) {
@@ -57,11 +56,11 @@ bool price_span(const int prices[], int n, int *min_out, int *max_out) {
 	*max_out = prices[0];
 	for(int i = 0; i < n; i++) {
 		if(prices[i] < *min_out) {
-			*min_out = price[i];
+			*min_out = prices[i];
 		}
 
 		if(prices[i] > *max_out) {
-			*max_out = price[i];
+			*max_out = prices[i];
 		}
 	}
 	
@@ -69,5 +68,5 @@ bool price_span(const int prices[], int n, int *min_out, int *max_out) {
 }
 
 void print_line_item(const char *name, int price_cents) {
-	printf("%s: %d cents", &name, price_cents);
+	printf("%s: %d cents", name, price_cents);
 }
