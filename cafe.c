@@ -68,5 +68,5 @@ bool price_span(const int prices[], int n, int *min_out, int *max_out) {
 }
 
 void print_line_item(const char *name, int price_cents) {
-	printf("%s: %d cents", name, price_cents);
+	printf("%s: %d cents\n", name, price_cents);
 }

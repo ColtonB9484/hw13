@@ -6,6 +6,10 @@ int main(void) {
 	int price_cents = 350;
 	int balance_cents = 1000;
 	int total_change = 0;
+	int prices[] = {350, 275, 400, 125, 500};
+	int min;
+	int max;
+	char name[] = "Orange Juice";
 
 	//test discount
 	preview_discount(350, 10); //expect 315
@@ -32,7 +36,7 @@ int main(void) {
 	printf("Code %d\n", charge(balance_cents, -10, &balance_cents));
 	printf("New Balance: %d\n", balance_cents);
 
-	//make_change test
+	//test make_change
 	printf("\nChange for $10 when cost is $5.50\n");
 	if(make_change(1000, 550, &total_change)) {
 		printf("Total Change: %d\n", total_change);
@@ -53,6 +57,21 @@ int main(void) {
 		printf("Total Change: %d\n", total_change);
 	}
 	printf("Should not print change\n");
+
+	//test price_span
+	printf("\nPrice Span OK: Min = 125, Max = 500\n");
+	if(price_span(prices, 5, &min, &max)) {
+		printf("Min: %d, Max %d\n", min, max);
+	}
+	printf("\nPrice Span n = 0:\n");
+	if(price_span(prices, 0, &min, &max)) {
+		printf("Min: %d, Max %d\n", min, max);
+	}
+	printf("Should not print min/max\n");
+
+	//test print_line
+	printf("\nprint_line_item test:\n");
+	print_line_item(name, 350);
 
 	return 0;
 }
