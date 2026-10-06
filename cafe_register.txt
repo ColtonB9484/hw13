@@ -33,3 +33,11 @@ Why commit the header before(or separatley from) a huge unfinished cafe.c?
 What is one file that should stay out of Git for this projects, and why?
 	The compiled file.  The failes cafe.h cafe.c and main.c can be compiled
 	easily. So there is almost no value to storing the executable on github
+
+b7ff908 Update Logic in main.c
+0574518 Finish Tests in main.c
+b9c0c10 Add Tests in main
+5a436ca Fix cafe.c Update .gitignore
+20edbdc Update cafe.c main.c
+44a6775 Change Header Call
+1838049 Add cafe.h cafe.c main.c
