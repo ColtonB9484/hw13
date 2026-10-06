@@ -1,0 +1,35 @@
+After preview_discount(price, 10), why is price unchanged? What must main pass so
+apply_discount can change it?
+	When previewing the discount, there is no pointer that is passed in. So if
+	math is done over the price argument, then it does not change. Main has to
+	pass a pointer to apply_discount to change the price to the discounted price
+
+Why does charge return an error code and write through new_balance, instead of only
+printing inside charge?
+	This is so that there is error handling within the function before it changes
+	any pointer value. 
+
+What shoud main do when make_change returns false?
+	It should move onto an else statement that states that the charge failed. 
+	Then print the error code.
+
+When is void the right return type for a register helper?
+	
+
+How does price_span communicate three pieces of information (ok/fail, min,max)
+	You can add an if statement to the main method that if it returns the
+	min and the max, that means that the code passed and is okay. If there
+	is no min/max change, then you know that the code failed
+
+What is undefined behavior if a non-void function falls off the end without a return?
+	Leaving a nonvoid function without a return value will end up returning what
+	ever value is left in memory.
+
+Why commit the header before(or separatley from) a huge unfinished cafe.c?
+	Because the header is a very concrete document. It doesn't change that
+	much throughout the implementation of cafe.c. It also gives a safe checkpoint
+	if anythin goes wrong during implementations
+
+What is one file that should stay out of Git for this projects, and why?
+	The compiled file.  The failes cafe.h cafe.c and main.c can be compiled
+	easily. So there is almost no value to storing the executable on github
